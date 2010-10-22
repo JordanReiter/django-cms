@@ -59,8 +59,11 @@ $(document).ready(function(){
 	
 	function init_buttons(placeholder){
 		$('span.insert-object').click(function(){
-			var select = $(this).parent().children("select");
-			var pluginvalue = select.attr('value');
+			var pluginvalue = $this.data('pluginvalue');
+			if (!pluginvalue) {
+				var select = $(this).parent().children("select");
+				var pluginvalue = select.attr('value');
+			}
 			var splits = window.location.href.split("?")[0].split("/");
 			var parent_id = Number(splits[splits.length - 2]);
 			var language = $('#id_language').attr('value');
@@ -106,6 +109,8 @@ $(document).ready(function(){
 
 function get_plugin_html(){
 	html = '<li class="wym_tools_plugins">'
+		+ '<span id="insert-LinkPlugin" class="insert-object addlink">{% filter escapejs %}{% trans "Link" %}{% endfilter %}</span>'
+		+ '<span id="insert-PicturePlugin" class="insert-object addlink">{% filter escapejs %}{% trans "Image" %}{% endfilter %}</span>'
         + '<select name="plugins">'
         + '<option value="" selected="selected">{% filter escapejs %}{% trans "Available Plugins" %}{% endfilter %}</option>'{% for p in installed_plugins %}
     	+ '<option value="{{ p.value }}">{{ p.name }}</option>'{% endfor %}
@@ -113,6 +118,8 @@ function get_plugin_html(){
         + '<span class="insert-object addlink">{% filter escapejs %}{% trans "Insert plugin" %}{% endfilter %}</span>'
         + '<span class="edit-object changelink">{% filter escapejs %}{% trans "Edit selected plugin" %}{% endfilter %}</span>'
         + '</li>';
+		$('#insert-LinkPlugin').data('LinkPlugin');
+		$('#insert-PicturePlugin').data('PicturePlugin');
 return html;
 
 }
