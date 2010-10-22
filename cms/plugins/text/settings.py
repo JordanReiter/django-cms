@@ -21,10 +21,10 @@ WYM_TOOLS = ",\n".join([
     "{'name': 'Redo', 'title': 'Redo', 'css': 'wym_tools_redo'}",
     "{'name': 'Paste', 'title': 'Paste_From_Word', 'css': 'wym_tools_paste'}",
     "{'name': 'ToggleHtml', 'title': 'HTML', 'css': 'wym_tools_html'}",
-    "{'name': 'CreateLink', 'title': 'Link', 'css': 'wym_tools_link'}",
-    "{'name': 'Unlink', 'title': 'Unlink', 'css': 'wym_tools_unlink'}",
-    "{'name': 'InsertImage', 'title': 'Image', 'css': 'wym_tools_image'}",
-    "{'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'}",
+#    "{'name': 'CreateLink', 'title': 'Link', 'css': 'wym_tools_link'}",
+#    "{'name': 'Unlink', 'title': 'Unlink', 'css': 'wym_tools_unlink'}",
+#    "{'name': 'InsertImage', 'title': 'Image', 'css': 'wym_tools_image'}",
+#    "{'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'}",
     "{'name': 'Preview', 'title': 'Preview', 'css': 'wym_tools_preview'}",
 ])
 
