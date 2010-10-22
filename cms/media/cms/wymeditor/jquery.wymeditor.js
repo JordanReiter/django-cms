@@ -2170,19 +2170,50 @@ WYMeditor.XhtmlValidator = {
       "inside":"select"
     },
     "29":"p",
-    "param":
-    {
-      "attributes":
-      {
-        "0":"type",
-        "valuetype":/^(data|ref|object)$/,
-        "1":"valuetype",
-        "2":"value"
-      },
-      "required":[
-      "name"
-      ]
-    },
+	"param":
+	    {
+	      "attributes":
+	      [
+	        "type",
+	        "value",
+			"name"
+	      ],
+	      "required":[
+	      "name"
+	      ],
+	      "inside":"object"
+	    },
+	"embed":
+	    {
+	      "attributes":
+	      [
+	        "width",
+	        "height",
+	        "allowfullscreen",
+	        "allowscriptaccess",
+	        "wmode",
+	        "type",
+	        "src"
+	      ],
+		  "inside":"object"
+	    },
+	"object":
+	    {
+	      "attributes":[
+	      "archive",
+	      "classid",
+	      "codebase",
+	      "codetype",
+	      "data",
+	      "declare",
+	      "height",
+	      "name",
+	      "standby",
+	      "type",
+	      "usemap",
+	      "width"
+	      ]
+	    },
     "30":"pre",
     "q":
     {
@@ -3385,7 +3416,7 @@ WYMeditor.XhtmlSaxListener = function()
     "dfn", "dl", "dt", "em", "fieldset", "form", "head", "h1", "h2",
     "h3", "h4", "h5", "h6", "html", "i", "ins",
     "kbd", "label", "legend", "li", "map", "noscript",
-    "object", "ol", "optgroup", "option", "p", "param", "pre", "q",
+    "object", "ol", "optgroup", "option", "p", "pre", "q",
     "samp", "script", "select", "small", "span", "strong", "style",
     "sub", "sup", "table", "tbody", "td", "textarea", "tfoot", "th",
     "thead", "title", "tr", "tt", "ul", "var", "extends"];
