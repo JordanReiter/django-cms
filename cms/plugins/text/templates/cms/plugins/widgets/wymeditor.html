@@ -118,8 +118,8 @@ function get_plugin_html(){
         + '<span class="insert-object addlink">{% filter escapejs %}{% trans "Insert plugin" %}{% endfilter %}</span>'
         + '<span class="edit-object changelink">{% filter escapejs %}{% trans "Edit selected plugin" %}{% endfilter %}</span>'
         + '</li>';
-		$('#insert-LinkPlugin').data('LinkPlugin');
-		$('#insert-PicturePlugin').data('PicturePlugin');
+		$('#insert-LinkPlugin').data('pluginvalue','LinkPlugin');
+		$('#insert-PicturePlugin').data('pluginvalue','PicturePlugin');
 return html;
 
 }
