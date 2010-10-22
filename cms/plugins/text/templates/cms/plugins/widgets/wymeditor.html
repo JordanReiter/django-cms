@@ -41,6 +41,8 @@ $(document).ready(function(){
             jQuery(wym._box)
             .find(wym._options.toolsSelector + wym._options.toolsListSelector)
             .append(html);
+			$('#insert-LinkPlugin').data('pluginvalue','LinkPlugin');
+			$('#insert-PicturePlugin').data('pluginvalue','PicturePlugin');
             // Enable the placeholderbridge plugin, to allow
             // the placeholder controls to talk to editor
             wym.placeholderbridge({'name': '{{ name }}'});
@@ -119,8 +121,6 @@ function get_plugin_html(){
         + '<span class="insert-object addlink">{% filter escapejs %}{% trans "Insert plugin" %}{% endfilter %}</span>'
         + '<span class="edit-object changelink">{% filter escapejs %}{% trans "Edit selected plugin" %}{% endfilter %}</span>'
         + '</li>';
-		$('#insert-LinkPlugin').data('pluginvalue','LinkPlugin');
-		$('#insert-PicturePlugin').data('pluginvalue','PicturePlugin');
 return html;
 
 }
