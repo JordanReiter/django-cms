@@ -60,6 +60,7 @@ $(document).ready(function(){
 	function init_buttons(placeholder){
 		$('span.insert-object').click(function(){
 			var pluginvalue = $(this).data('pluginvalue');
+			alert(pluginvalue);
 			if (!pluginvalue) {
 				var select = $(this).parent().children("select");
 				var pluginvalue = select.attr('value');
