@@ -412,10 +412,10 @@ jQuery.fn.wymeditor = function(options) {
         {'name': 'Outdent', 'title': 'Outdent', 'css': 'wym_tools_outdent'},
         {'name': 'Undo', 'title': 'Undo', 'css': 'wym_tools_undo'},
         {'name': 'Redo', 'title': 'Redo', 'css': 'wym_tools_redo'},
-//        {'name': 'CreateLink', 'title': 'Link', 'css': 'wym_tools_link'},
-//        {'name': 'Unlink', 'title': 'Unlink', 'css': 'wym_tools_unlink'},
-//        {'name': 'InsertImage', 'title': 'Image', 'css': 'wym_tools_image'},
-//        {'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'},
+        {'name': 'CreateLink', 'title': 'Link', 'css': 'wym_tools_link'},
+        {'name': 'Unlink', 'title': 'Unlink', 'css': 'wym_tools_unlink'},
+        {'name': 'InsertImage', 'title': 'Image', 'css': 'wym_tools_image'},
+        {'name': 'InsertTable', 'title': 'Table', 'css': 'wym_tools_table'},
         {'name': 'Paste', 'title': 'Paste_From_Word',
             'css': 'wym_tools_paste'},
         {'name': 'ToggleHtml', 'title': 'HTML', 'css': 'wym_tools_html'},
@@ -2170,50 +2170,19 @@ WYMeditor.XhtmlValidator = {
       "inside":"select"
     },
     "29":"p",
-	"param":
-	    {
-	      "attributes":
-	      [
-	        "type",
-	        "value",
-			"name"
-	      ],
-	      "required":[
-	      "name"
-	      ],
-	      "inside":"object"
-	    },
-	"embed":
-	    {
-	      "attributes":
-	      [
-	        "width",
-	        "height",
-	        "allowfullscreen",
-	        "allowscriptaccess",
-	        "wmode",
-	        "type",
-	        "src"
-	      ],
-		  "inside":"object"
-	    },
-	"object":
-	    {
-	      "attributes":[
-	      "archive",
-	      "classid",
-	      "codebase",
-	      "codetype",
-	      "data",
-	      "declare",
-	      "height",
-	      "name",
-	      "standby",
-	      "type",
-	      "usemap",
-	      "width"
-	      ]
-	    },
+    "param":
+    {
+      "attributes":
+      {
+        "0":"type",
+        "valuetype":/^(data|ref|object)$/,
+        "1":"valuetype",
+        "2":"value"
+      },
+      "required":[
+      "name"
+      ]
+    },
     "30":"pre",
     "q":
     {
@@ -3416,13 +3385,13 @@ WYMeditor.XhtmlSaxListener = function()
     "dfn", "dl", "dt", "em", "fieldset", "form", "head", "h1", "h2",
     "h3", "h4", "h5", "h6", "html", "i", "ins",
     "kbd", "label", "legend", "li", "map", "noscript",
-    "object", "ol", "optgroup", "option", "p", "pre", "q",
+    "object", "ol", "optgroup", "option", "p", "param", "pre", "q",
     "samp", "script", "select", "small", "span", "strong", "style",
     "sub", "sup", "table", "tbody", "td", "textarea", "tfoot", "th",
     "thead", "title", "tr", "tt", "ul", "var", "extends"];
 
 
-    this.inline_tags = ["br", "hr", "img", "input", "param", "embed"];
+    this.inline_tags = ["br", "hr", "img", "input"];
 
     return this;
 };
